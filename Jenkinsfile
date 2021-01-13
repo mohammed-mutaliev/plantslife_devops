@@ -7,12 +7,22 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'bash ./gradlew assemble --stacktrace'
+                sh './gradlew assemble'
             }
         }
         stage('Test') {
             steps {
-                sh 'bash ./gradlew test --stacktrace'
+                sh './gradlew test'
+            }
+        }
+        stage('Build Docker image') {
+            steps {
+                sh './gradlew docker'
+            }
+        }
+        stage('Run Docker image') {
+            steps {
+                sh './gradlew docker dockerRun'
             }
         }
     }
