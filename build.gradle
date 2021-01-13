@@ -2,6 +2,10 @@ plugins {
 	id 'org.springframework.boot' version '2.4.1'
 	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
 	id 'java'
+	id 'pl.allegro.tech.build.axion-release' version '1.12.0'
+    id 'com.palantir.docker' version '0.25.0'
+    id 'com.palantir.docker-run' version '0.25.0'
+    id 'jp.classmethod.aws.cloudformation' version '0.41'
 }
 
 group = 'com.example'
@@ -10,6 +14,7 @@ sourceCompatibility = '8'
 
 repositories {
 	mavenCentral()
+	jcenter()
 }
 
 dependencies {
