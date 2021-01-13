@@ -13,6 +13,8 @@ import com.example.plantslife.model.User.getUser;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
+	User findTopByOrderByIdDesc();
+	
 	Optional<User> findByUsername(String username);
 
 	Boolean existsByUsername(String username);

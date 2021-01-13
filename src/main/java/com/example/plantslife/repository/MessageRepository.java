@@ -12,6 +12,7 @@ import com.example.plantslife.model.Message;
 
 @Repository
 public interface MessageRepository extends JpaRepository<Message, Long>{
+	Message findTopByOrderByIdDesc();
 	
 	@Query("SELECT new Message(m.id, m.text, m.timeStamp, m.senderId, m.receiverId, m.state) FROM Message m WHERE (m.state != com.example.plantslife.model.MessageState.DELETED AND m.senderId= ?1 AND m.receiverId= ?2) OR (m.state != com.example.plantslife.model.MessageState.DELETED AND m.senderId= ?2 AND m.receiverId= ?1) ORDER BY timeStamp ASC")
 	List<Message> getChatByUsersId(long id1, long id2); 

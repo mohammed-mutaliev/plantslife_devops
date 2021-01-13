@@ -29,6 +29,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-websocket'
 	implementation 'org.springframework.boot:spring-boot-starter-tomcat'
 	
+	implementation group: 'com.h2database', name: 'h2', version: '1.4.200'
+	
 	runtimeOnly 'mysql:mysql-connector-java'
 	
 	

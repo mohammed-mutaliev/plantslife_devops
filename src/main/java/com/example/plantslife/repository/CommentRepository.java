@@ -10,6 +10,8 @@ import com.example.plantslife.model.Comment;
 
 @Repository
 public interface CommentRepository extends JpaRepository<Comment, Long>{
+	Comment findTopByOrderByIdDesc();
+	
 	@Query("SELECT new Comment(id, userId, username, plantId, text, timeStamp) FROM Comment c WHERE c.plantId = ?1")
 	List<Comment> getCommentsByPlantsId(Long id);
 	
