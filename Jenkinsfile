@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'bash ./gradlew assemble'
+                sh 'bash ./gradlew assemble --stacktrace'
             }
         }
         stage('Test') {
