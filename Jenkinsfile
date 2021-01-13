@@ -20,10 +20,5 @@ pipeline {
                 sh 'bash ./gradlew docker'
             }
         }
-        stage('Run Docker image') {
-            steps {
-                sh 'bash ./gradlew docker dockerRun'
-            }
-        }
     }
 }
