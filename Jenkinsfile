@@ -7,7 +7,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "sudo chown root:jenkins /run/docker.sock"
                 sh 'bash ./gradlew assemble'
             }
         }
