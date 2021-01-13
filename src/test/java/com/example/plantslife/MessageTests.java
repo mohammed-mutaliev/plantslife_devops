@@ -14,7 +14,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
@@ -23,7 +22,6 @@ import com.example.plantslife.repository.UserRepository;
 
 @WithMockUser(username="test", roles={"USER"})
 @TestMethodOrder(OrderAnnotation.class) 
-@RunWith(SpringRunner.class)
 @SpringBootTest(classes = PlantslifeDevopsApplication.class)
 @ActiveProfiles("test")
 @AutoConfigureMockMvc
