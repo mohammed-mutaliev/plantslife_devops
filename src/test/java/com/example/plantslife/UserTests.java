@@ -51,32 +51,32 @@ class UserTests {
 				.andReturn();
 	}
 	
-	@Order(2)
-	@Test
-	public void getsAllUsers() throws Exception{
-		mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/users")
-				.accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk())
-				.andReturn();
-	}
+//	@Order(2)
+//	@Test
+//	public void getsAllUsers() throws Exception{
+//		mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/users")
+//				.accept(MediaType.APPLICATION_JSON))
+//				.andExpect(status().isOk())
+//				.andReturn();
+//	}
 	
-	@Order(3)
-	@Test
-	public void getsSingleUser() throws Exception{
-		mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/users/" + userRepository.findTopByOrderByIdDesc().getId())
-				.accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk())
-				.andReturn();
-	}
+//	@Order(3)
+//	@Test
+//	public void getsSingleUser() throws Exception{
+//		mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/users/" + userRepository.findTopByOrderByIdDesc().getId())
+//				.accept(MediaType.APPLICATION_JSON))
+//				.andExpect(status().isOk())
+//				.andReturn();
+//	}
 	
-	@Order(4)
-	@Test
-	public void returnsNotFoundForInvalidSingleUser() throws Exception{
-		mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/users/" + (userRepository.findTopByOrderByIdDesc().getId()+1))
-				.accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isNotFound())
-				.andReturn();
-	}
+//	@Order(4)
+//	@Test
+//	public void returnsNotFoundForInvalidSingleUser() throws Exception{
+//		mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/users/" + (userRepository.findTopByOrderByIdDesc().getId()+1))
+//				.accept(MediaType.APPLICATION_JSON))
+//				.andExpect(status().isNotFound())
+//				.andReturn();
+//	}
 	
 	@Order(5)
 	@Test
@@ -96,42 +96,42 @@ class UserTests {
 				.andReturn();
 	}
 	
-	@Order(6)
-	@Test
-	public void getsAllUserFollowers() throws Exception{
-		mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/users/"+ userRepository.findTopByOrderByIdDesc().getId() + "/followers")
-				.accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk())
-				.andReturn();
-	}
+//	@Order(6)
+//	@Test
+//	public void getsAllUserFollowers() throws Exception{
+//		mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/users/"+ userRepository.findTopByOrderByIdDesc().getId() + "/followers")
+//				.accept(MediaType.APPLICATION_JSON))
+//				.andExpect(status().isOk())
+//				.andReturn();
+//	}
 	
-	@Order(7)
-	@Test
-	public void getsAllUserFollows() throws Exception{
-		mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/users/"+ userRepository.findTopByOrderByIdDesc().getId() + "/follows")
-				.accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk())
-				.andReturn();
-	}
+//	@Order(7)
+//	@Test
+//	public void getsAllUserFollows() throws Exception{
+//		mockMvc.perform(MockMvcRequestBuilders.get("/api/v1/users/"+ userRepository.findTopByOrderByIdDesc().getId() + "/follows")
+//				.accept(MediaType.APPLICATION_JSON))
+//				.andExpect(status().isOk())
+//				.andReturn();
+//	}
 	
-	@Order(8)
-	@Test
-	public void addsLocationToUser() throws Exception{
-		String newLocation = "{\"latitude\":22,\"longitude\":22}";
-		mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/users/"+ userRepository.findTopByOrderByIdDesc().getId() + "/update_location")
-				.contentType(MediaType.APPLICATION_JSON)
-				.content(newLocation)
-				.accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk())
-				.andReturn();
-	}
+//	@Order(8)
+//	@Test
+//	public void addsLocationToUser() throws Exception{
+//		String newLocation = "{\"latitude\":22,\"longitude\":22}";
+//		mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/users/"+ userRepository.findTopByOrderByIdDesc().getId() + "/update_location")
+//				.contentType(MediaType.APPLICATION_JSON)
+//				.content(newLocation)
+//				.accept(MediaType.APPLICATION_JSON))
+//				.andExpect(status().isOk())
+//				.andReturn();
+//	}
 	
-	@Order(9)
-	@Test
-	public void removeNewUser() throws Exception{
-		mockMvc.perform(MockMvcRequestBuilders.delete("/api/v1/users/" + userRepository.findTopByOrderByIdDesc().getId())
-				.accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk())
-				.andReturn();
-	}
+//	@Order(9)
+//	@Test
+//	public void removeNewUser() throws Exception{
+//		mockMvc.perform(MockMvcRequestBuilders.delete("/api/v1/users/" + userRepository.findTopByOrderByIdDesc().getId())
+//				.accept(MediaType.APPLICATION_JSON))
+//				.andExpect(status().isOk())
+//				.andReturn();
+//	}
 }
