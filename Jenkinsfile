@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh './gradlew test'
+                sh 'bash ./gradlew test --stacktrace'
             }
         }
     }
