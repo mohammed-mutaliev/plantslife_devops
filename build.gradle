@@ -71,7 +71,7 @@ aws {
 cloudFormation {
     stackName "plantslife-devops-stack"
     stackParams([
-            SubnetID: findProperty('subnetId') ?: '',
+            SubnetID: findProperty('subnetId') ?: 'subnet-48eaf232',
             ServiceName: project.name,
             ServiceVersion: project.version,
             DockerHubUsername: dockerHubUsernameProperty
