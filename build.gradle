@@ -69,7 +69,7 @@ aws {
 }
 
 cloudFormation {
-    stackName "$project.name-stack"
+    stackName "plantslife-devops-stack"
     stackParams([
             SubnetID: findProperty('subnetId') ?: '',
             ServiceName: "plantslife-devops",
